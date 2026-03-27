@@ -151,14 +151,14 @@
       letter-spacing: -1px;
     }
 
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin-bottom: 2rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 900px;
+  line-height: 1.8;
+  column-count: 2;
+  column-gap: 3rem;
+}
 
     .cta-buttons {
       display: flex;
@@ -627,6 +627,9 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
+       .hero-subtitle {
+    column-count: 1;
+  }
       nav {
         padding: 1rem 1.5rem;
       }
