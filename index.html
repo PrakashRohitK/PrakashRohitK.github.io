@@ -151,14 +151,51 @@
       letter-spacing: -1px;
     }
 
-.hero-subtitle {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
-  max-width: 900px;
-  line-height: 1.8;
-  column-count: 2;
-  column-gap: 3rem;
-}
+    .hero-points {
+      max-width: 920px;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .hero-points li {
+      position: relative;
+      padding: 1rem 1rem 1rem 3rem;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(14, 165, 233, 0.15);
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-points li:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 30px rgba(14, 165, 233, 0.15);
+    }
+
+    .hero-points li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(14, 165, 233, 0.22);
+    }
 
     .cta-buttons {
       display: flex;
@@ -627,9 +664,10 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-       .hero-subtitle {
-    column-count: 1;
-  }
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
       nav {
         padding: 1rem 1.5rem;
       }
@@ -700,13 +738,14 @@
 <section id="hero">
   <p class="hero-tag">Data Engineer | Analytics | AI | CS Graduate at USC</p>
   <h1>Rohit Bharadwaj Kadiyala</h1>
-  <p class="hero-subtitle">
-Data is at the core of everything I build, backed by a strong Computer Science foundation and experience as a Data Engineer at Deloitte, where I worked on scalable data systems, automated workflows, and delivered reliable, real-world solutions.
 
-I’ve always been a data and AI enthusiast, driven by curiosity to transform raw data into meaningful insights and intelligent systems. Now pursuing my MSCS at USC, I’m expanding into Machine Learning and AI, building on my data foundation to create systems that are not only scalable, but also adaptive and impactful.
-
-I’m particularly interested in working at the intersection of data engineering, analytics, and AI, building end-to-end systems that turn data into actionable intelligence.
-</p>
+  <ul class="hero-points">
+    <li>Data is at the core of everything I build, backed by a strong Computer Science foundation and experience as a Data Engineer at Deloitte</li>
+    <li>I worked on scalable data systems, automated workflows, and delivered reliable, real-world solutions</li>
+    <li>I've always been a data and AI enthusiast, driven by curiosity to transform raw data into meaningful insights and intelligent systems</li>
+    <li>Now pursuing my MSCS at USC, I am expanding into Machine Learning and AI</li>
+    <li>I am especially interested in building end-to-end systems at the intersection of data engineering, analytics, and AI</li>
+  </ul>
   
   <div class="cta-buttons">
     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -720,11 +759,7 @@ I’m particularly interested in working at the intersection of data engineering
       <div class="stat-label">GPA (USC MSCS)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">10GB+</div>
-      <div class="stat-label">Daily Data Processed</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">2.5+</div>
+      <div class="stat-number">1.5</div>
       <div class="stat-label">Years Experience</div>
     </div>
   </div>
@@ -822,9 +857,7 @@ I’m particularly interested in working at the intersection of data engineering
         <li>Integrated YOLOv8 object detection and Tesseract OCR for grounded understanding</li>
         <li>Deployed interactive Gradio web application for real-time inference</li>
       </ul>
-      <div class="project-links">
-        <!-- Project repos coming soon -->
-      </div>
+      <div class="project-links"></div>
     </div>
 
     <div class="project-card reveal">
@@ -837,9 +870,7 @@ I’m particularly interested in working at the intersection of data engineering
         <li>20%+ accuracy improvement using transformer-based context-aware embeddings</li>
         <li>Detected complex nuances like sarcasm and multi-dimensional emotional patterns</li>
       </ul>
-      <div class="project-links">
-        <!-- Project repos coming soon -->
-      </div>
+      <div class="project-links"></div>
     </div>
 
     <div class="project-card reveal">
@@ -852,9 +883,7 @@ I’m particularly interested in working at the intersection of data engineering
         <li>60-70% reduction in manual messaging effort with improved consistency</li>
         <li>Scheduled reminders and service updates fully automated</li>
       </ul>
-      <div class="project-links">
-        <!-- Project repos coming soon -->
-      </div>
+      <div class="project-links"></div>
     </div>
 
     <div class="project-card reveal">
@@ -867,9 +896,7 @@ I’m particularly interested in working at the intersection of data engineering
         <li>Transaction handling and database fundamentals demonstrated</li>
         <li>Built with Python Tkinter and SQLite for desktop deployment</li>
       </ul>
-      <div class="project-links">
-        <!-- Project repos coming soon -->
-      </div>
+      <div class="project-links"></div>
     </div>
   </div>
 </section>
@@ -978,7 +1005,6 @@ I’m particularly interested in working at the intersection of data engineering
 </footer>
 
 <script>
-  // Smooth scroll and header effect
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -988,7 +1014,6 @@ I’m particularly interested in working at the intersection of data engineering
     }
   });
 
-  // Reveal animations on scroll
   const revealElements = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1001,7 +1026,6 @@ I’m particularly interested in working at the intersection of data engineering
 
   revealElements.forEach(el => observer.observe(el));
 
-  // Smooth scroll for navigation links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
