@@ -130,15 +130,37 @@
     .cert-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; line-height: 1.4; }
     .cert-meta { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
 
-    /* CONTACT */
-    #contact { background: linear-gradient(135deg,var(--accent-dark),var(--accent)); color: white; border-radius: 14px; margin: 5rem 2rem; text-align: center; padding: 5rem 2rem; }
-    #contact h2 { color: white; }
-    .contact-content { display: flex; flex-direction: column; align-items: center; gap: 1.8rem; }
-    .contact-email { font-size: 1.7rem; font-weight: 700; color: white; text-decoration: none; transition: all .3s; word-break: break-all; }
-    .contact-email:hover { opacity: .8; }
-    .social-links { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
-    .social-link { background: rgba(255,255,255,.2); color: white; padding: .7rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all .3s; backdrop-filter: blur(10px); }
-    .social-link:hover { background: rgba(255,255,255,.3); transform: translateY(-2px); }
+    /* CONTACT — fixed layout */
+    #contact {
+      background: linear-gradient(135deg,var(--accent-dark),var(--accent));
+      color: white;
+      border-radius: 14px;
+      margin: 5rem 2rem;
+      text-align: center;
+      padding: 7rem 4rem;
+    }
+    #contact h2 { color: white; margin-bottom: .5rem; }
+    .contact-content { display: flex; flex-direction: column; align-items: center; gap: 2.6rem; max-width: 720px; margin: 0 auto; }
+    .contact-desc { font-size: 1.1rem; max-width: 500px; color: rgba(255,255,255,.92); line-height: 1.8; }
+    .contact-email { font-size: 2rem; font-weight: 700; color: white; text-decoration: none; transition: all .3s; letter-spacing: -.5px; word-break: break-all; border-bottom: 2px solid rgba(255,255,255,.4); padding-bottom: .3rem; }
+    .contact-email:hover { opacity: .8; border-color: white; }
+    .social-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; width: 100%; }
+    .social-link {
+      background: rgba(255,255,255,.2);
+      color: white;
+      padding: .9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .97rem;
+      transition: all .3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.15);
+      flex: 1;
+      min-width: 140px;
+      max-width: 200px;
+    }
+    .social-link:hover { background: rgba(255,255,255,.3); transform: translateY(-2px); border-color: rgba(255,255,255,.4); }
 
     footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); font-size: .88rem; background: rgba(0,0,0,.02); }
 
@@ -152,10 +174,12 @@
       .exp-header { flex-direction: column; }
       .exp-impact-grid { grid-template-columns: 1fr; }
       .cert-grid { grid-template-columns: 1fr; }
-      #contact { margin: 3rem 1.5rem; }
+      #contact { margin: 3rem 1.5rem; padding: 4rem 2rem; }
+      .social-link { max-width: 100%; }
     }
 
-    .reveal { opacity: 0; transform: translateY(28px); transition: all .6s ease; }
+    .reveal { opacity: 1; transform: translateY(0); transition: all .6s ease; }
+    .reveal.hidden { opacity: 0; transform: translateY(28px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
@@ -209,8 +233,9 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="mailto:kpbrbhyd@gmail.com" class="nav-resume-btn">⬇ Resume</a>
-      <a href="mailto:kpbrbhyd@gmail.com" class="hire-badge">
+      <!-- FIX: actual PDF download instead of mailto -->
+
+      <a href="/cdn-cgi/l/email-protection#5b302b39293933223f1b3c363a323775383436" class="hire-badge">
         <span class="hire-dot"></span>Open to Work
       </a>
     </div>
@@ -227,15 +252,15 @@
     Data engineer with a deep interest in AI and intelligent systems. I build pipelines that move data and models that make sense of it — from enterprise ETL at Deloitte to transformer fine-tuning at USC.
   </p>
   <ul class="hero-points">
-    <li>Strong foundation in data engineering with 1.5+ years at Deloitte building enterprise ETL pipelines on Azure for Fortune 500 clients</li>
-    <li>Deeply passionate about AI — fine-tuned multimodal transformers (BLIP-2, InstructBLIP) and actively researching LLM hallucination evaluation at USC</li>
-    <li>Pursuing MSCS at USC (GPA 3.83) with coursework in Machine Learning, Cloud Computing, and Information Retrieval</li>
-    <li>Experienced across the full data stack: ingestion, transformation, cloud infrastructure, analytics, and deployed ML models</li>
-    <li>Seeking roles at the intersection of data engineering and AI where clean pipelines power intelligent, production-grade systems</li>
+    <li>Passionate about <strong>Data Engineering</strong> — designing scalable pipelines, cloud-native ETL, and the infrastructure that makes data reliable at enterprise scale</li>
+    <li>Deeply interested in <strong>Data Science & Analytics</strong> — turning raw data into decisions through predictive modeling, statistical analysis, and business-facing insights</li>
+    <li>Drawn to <strong>AI & Machine Learning</strong> — especially where it connects to data: feature engineering, model-ready pipelines, NLP, and applied ML in production systems</li>
+    <li>Backed by 1.5+ years at Deloitte in enterprise data roles, a B.Tech in CSE from GITAM (GPA 9.49/10, First Class with Distinction), and an MSCS at USC (GPA 3.83) with coursework across ML, Cloud Computing, NLP, and Database Systems</li>
+    <li>Targeting full-time roles in <strong>Data Engineering, Data Science, Analytics Engineering, Business Intelligence, Data Analytics, Software Engineering, AI/ML Engineering</strong>, and many more — open to any domain where data and technology are at the core</li>
   </ul>
   <div class="cta-buttons">
     <a href="#contact" class="btn btn-primary">Get In Touch</a>
-    <a href="mailto:kpbrbhyd@gmail.com" class="btn btn-resume">⬇ Download Resume</a>
+
     <a href="https://www.linkedin.com/in/rohit-bharadwaj-kadiyala/" target="_blank" class="btn btn-secondary">LinkedIn</a>
     <a href="https://github.com/PrakashRohitK" target="_blank" class="btn btn-secondary">GitHub</a>
   </div>
@@ -341,7 +366,6 @@
     <div class="exp-header">
       <div>
         <div class="exp-title-row">
-          <!-- Kalgudi logo placeholder - leaf/plant icon representing agri-tech -->
           <div class="exp-title">Software Engineer Intern · Internship</div>
         </div>
         <div class="exp-company">Kalgudi Digital Pvt Ltd</div>
@@ -381,7 +405,6 @@
       <div class="exp-header">
         <div>
           <div class="exp-title-row">
-            <!-- USC logo -->
             <div class="exp-title">Student Worker <span class="badge-pt">PART-TIME</span></div>
           </div>
           <div class="exp-company">USCard Services, University of Southern California</div>
@@ -575,21 +598,20 @@
         <div class="cert-meta">GITAM University &nbsp;·&nbsp; Apr 2023</div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT — fixed: spread out, no mailto on download -->
 <section id="contact">
   <div class="contact-content">
     <h2>Let's Work Together</h2>
-    <p style="font-size:1.05rem;max-width:480px;color:rgba(255,255,255,.9);">Open to full-time opportunities in data engineering, AI, and cloud systems. Always interested in ambitious, scalable problems.</p>
-    <a href="mailto:kpbrbhyd@gmail.com" class="contact-email">kpbrbhyd@gmail.com</a>
+    <p class="contact-desc">Open to full-time opportunities in data engineering, AI, and cloud systems. Always interested in ambitious, scalable problems.</p>
+    <a href="/cdn-cgi/l/email-protection#117a6173637379687551767c70787d3f727e7c" class="contact-email"><span class="__cf_email__" data-cfemail="c5aeb5a7b7a7adbca185a2a8a4aca9eba6aaa8">[email&#160;protected]</span></a>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/rohit-bharadwaj-kadiyala/" target="_blank" class="social-link">LinkedIn</a>
       <a href="https://github.com/PrakashRohitK" target="_blank" class="social-link">GitHub</a>
       <a href="tel:+12136627759" class="social-link">📞 +1 (213) 662-7759</a>
-      <a href="mailto:kpbrbhyd@gmail.com" class="social-link" style="background:rgba(16,185,129,.3);border:1px solid rgba(16,185,129,.5);">⬇ Download Resume</a>
+
     </div>
   </div>
 </section>
@@ -600,13 +622,14 @@
   <p>&copy; 2025 Rohit Bharadwaj Kadiyala. All rights reserved. &nbsp;·&nbsp; Deployed with GitHub Pages.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
 
   const revealEls = document.querySelectorAll('.reveal');
+  revealEls.forEach(el => el.classList.add('hidden'));
   const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.remove('hidden'); e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
   }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
 
@@ -616,9 +639,4 @@
 
   const navLinks = document.querySelectorAll('.nav-tabs a');
   const secObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ navLinks.forEach(l => { l.classList.remove('active'); if(l.getAttribute('href')==='#'+e.target.id) l.classList.add('active'); }); } });
-  }, { threshold: .35 });
-  document.querySelectorAll('section[id], #certifications').forEach(s => secObs.observe(s));
-</script>
-</body>
-</html>
+    entries.forEach(e => { if(e.isIntersecting){
