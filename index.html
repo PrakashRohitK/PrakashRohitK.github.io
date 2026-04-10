@@ -16,24 +16,11 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
 
-    /* ── ANIMATED TECH CANVAS BACKGROUND ── */
-    #tech-bg {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 0; pointer-events: none; opacity: 0.45;
-    }
-
-    /* everything sits above the canvas */
+    #tech-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.45; }
     header, main, footer { position: relative; z-index: 1; }
 
-    /* ── HEADER ── */
-    header {
-      position: sticky; top: 0; z-index: 100;
-      padding: 0.9rem 2rem;
-      background: rgba(250,250,249,0.88);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow .3s;
-    }
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 100; padding: 0.9rem 2rem; background: rgba(250,250,249,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); transition: box-shadow .3s; }
     header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.06); }
     nav { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .logo { font-size: 1.15rem; font-weight: 700; letter-spacing: -.5px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; white-space: nowrap; }
@@ -50,15 +37,16 @@
     .nav-resume-btn:hover { background: #10b981; color: white; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(16,185,129,.3); }
     @media (max-width: 900px) { .nav-tabs { gap: .1rem; padding: .2rem .25rem; } .nav-tabs li a { padding: .3rem .55rem; font-size: .75rem; } .hire-badge { display: none; } .nav-resume-btn { padding: .3rem .65rem; font-size: .75rem; } }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero { max-width: 1400px; margin: 0 auto; padding: 6rem 2rem; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; animation: fadeInUp .8s ease .2s backwards; }
     @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
     .hero-tag { font-family: 'IBM Plex Mono', monospace; font-size: .82rem; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.4rem; font-weight: 500; }
-    h1 { font-size: clamp(2.4rem,8vw,4.4rem); line-height: 1.1; margin-bottom: 1.4rem; font-weight: 700; letter-spacing: -1px; }
+    h1 { font-size: clamp(2.4rem,8vw,4.4rem); line-height: 1.1; margin-bottom: .6rem; font-weight: 700; letter-spacing: -1px; }
+    .hero-subtitle { font-size: 1.08rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2rem; line-height: 1.75; }
     .hero-points { max-width: 920px; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .9rem; list-style: none; }
-    .hero-points li { position: relative; padding: .9rem .9rem .9rem 2.8rem; background: rgba(255,255,255,.78); border: 1px solid rgba(14,165,233,.15); border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,.04); color: var(--text-secondary); font-size: .98rem; line-height: 1.7; transition: all .25s; backdrop-filter: blur(10px); }
+    .hero-points li { position: relative; padding: .85rem .9rem .85rem 2.8rem; background: rgba(255,255,255,.78); border: 1px solid rgba(14,165,233,.15); border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,.04); color: var(--text-secondary); font-size: .96rem; line-height: 1.65; transition: all .25s; backdrop-filter: blur(10px); }
     .hero-points li:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 14px 28px rgba(14,165,233,.15); }
-    .hero-points li::before { content:"✓"; position: absolute; left: .9rem; top: .9rem; width: 1.3rem; height: 1.3rem; display: grid; place-items: center; border-radius: 999px; background: linear-gradient(135deg,var(--accent),var(--accent-dark)); color: white; font-size: .75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(14,165,233,.22); }
+    .hero-points li::before { content:"✓"; position: absolute; left: .9rem; top: .85rem; width: 1.3rem; height: 1.3rem; display: grid; place-items: center; border-radius: 999px; background: linear-gradient(135deg,var(--accent),var(--accent-dark)); color: white; font-size: .75rem; font-weight: 700; box-shadow: 0 4px 12px rgba(14,165,233,.22); }
     .cta-buttons { display: flex; gap: .9rem; margin-bottom: 3.5rem; flex-wrap: wrap; align-items: center; }
     .btn { padding: .72rem 1.7rem; border-radius: 6px; border: none; font-size: .92rem; font-weight: 600; cursor: pointer; transition: all .3s; text-decoration: none; display: inline-block; font-family: 'Outfit', sans-serif; letter-spacing: .3px; }
     .btn-primary { background: var(--accent); color: white; }
@@ -72,30 +60,39 @@
     .stat-number { font-size: 1.9rem; font-weight: 700; color: var(--accent); margin-bottom: .25rem; }
     .stat-label { font-family: 'IBM Plex Mono', monospace; font-size: .76rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .1em; }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
     .section-label { font-family: 'IBM Plex Mono', monospace; font-size: .78rem; color: var(--accent); text-transform: uppercase; letter-spacing: .15em; margin-bottom: .9rem; font-weight: 600; }
     h2 { font-size: clamp(1.7rem,5vw,2.8rem); margin-bottom: .4rem; font-weight: 700; letter-spacing: -.5px; }
     .section-description { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.8rem; max-width: 620px; line-height: 1.8; }
 
-    /* ── EXPERIENCE ── */
+    /* EXPERIENCE */
     .experience-item { padding: 2.2rem 0; border-bottom: 1px solid var(--border); transition: all .3s; position: relative; }
     .experience-item:hover { padding-left: 1rem; }
     .experience-item::before { content:''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transform-origin: top; transition: transform .3s; }
     .experience-item:hover::before { transform: scaleY(1); }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .7rem; flex-wrap: wrap; gap: .9rem; }
+    .exp-title-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .2rem; }
     .exp-title { font-size: 1.2rem; font-weight: 700; }
+    .company-logo { height: 28px; width: auto; object-fit: contain; border-radius: 4px; flex-shrink: 0; }
+    .company-logo-svg { height: 28px; width: auto; flex-shrink: 0; }
     .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: .86rem; color: var(--text-muted); white-space: nowrap; }
     .exp-company { font-size: .96rem; color: var(--accent); font-weight: 600; margin-bottom: .3rem; }
     .exp-location { font-size: .86rem; color: var(--text-secondary); margin-bottom: .9rem; }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-    .exp-bullets li { font-size: .93rem; color: var(--text-secondary); padding-left: 1.4rem; position: relative; line-height: 1.7; }
-    .exp-bullets li::before { content:'→'; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
     .part-time-section { margin-top: 2.8rem; padding-top: 1.8rem; border-top: 2px solid var(--border); }
     .part-time-label { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--accent); text-transform: uppercase; letter-spacing: .15em; margin-bottom: 1.4rem; font-weight: 700; }
     .badge-pt { background: var(--accent); color: white; padding: .18rem .55rem; border-radius: 3px; font-size: .68rem; margin-left: .5rem; font-weight: 700; }
 
-    /* ── PROJECTS ── */
+    /* IMPACT CARDS */
+    .exp-impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: .5rem; }
+    .exp-impact-card { background: rgba(14,165,233,.04); border: 1px solid rgba(14,165,233,.14); border-radius: 10px; padding: 1.1rem 1.2rem; transition: all .25s; }
+    .exp-impact-card:hover { border-color: var(--accent); background: rgba(14,165,233,.08); transform: translateY(-2px); }
+    .exp-impact-icon { font-size: 1.35rem; margin-bottom: .5rem; line-height: 1; }
+    .exp-impact-label { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; margin-bottom: .45rem; }
+    .exp-impact-text { font-size: .9rem; color: var(--text-secondary); line-height: 1.65; }
+    .exp-impact-text strong { color: var(--text-primary); font-weight: 700; }
+
+    /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(340px,1fr)); gap: 1.8rem; margin-top: 2.8rem; }
     .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: all .3s; position: relative; overflow: hidden; }
     .project-card::before { content:''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(14,165,233,.08),transparent); transition: left .5s; }
@@ -107,7 +104,7 @@
     .project-highlights li { font-size: .9rem; color: var(--text-secondary); padding-left: 1.3rem; position: relative; line-height: 1.65; }
     .project-highlights li::before { content:'✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.8rem; margin-top: 2.8rem; }
     .skill-category { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: all .3s; }
     .skill-category:hover { border-color: var(--accent); background: rgba(14,165,233,.02); }
@@ -116,34 +113,24 @@
     .skill-list li { font-size: .92rem; color: var(--text-secondary); position: relative; padding-left: 1.4rem; }
     .skill-list li::before { content:'•'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 1.1rem; }
 
-    /* ── EDUCATION ── */
+    /* EDUCATION */
     .education-item { background: var(--surface); border-left: 4px solid var(--accent); padding: 1.8rem; margin-bottom: 1.4rem; border-radius: 4px; transition: all .3s; }
     .education-item:hover { box-shadow: 0 4px 12px rgba(14,165,233,.1); }
     .edu-degree { font-size: 1.15rem; font-weight: 700; margin-bottom: .25rem; }
     .edu-school { color: var(--accent); font-weight: 600; margin-bottom: .25rem; }
     .edu-details { font-size: .88rem; color: var(--text-secondary); margin-top: .4rem; }
 
-    /* ── EXPERIENCE IMPACT CARDS ── */
-    .exp-impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: .5rem; }
-    .exp-impact-card { background: rgba(14,165,233,.04); border: 1px solid rgba(14,165,233,.14); border-radius: 10px; padding: 1.1rem 1.2rem; transition: all .25s; }
-    .exp-impact-card:hover { border-color: var(--accent); background: rgba(14,165,233,.08); transform: translateY(-2px); }
-    .exp-impact-icon { font-size: 1.35rem; margin-bottom: .5rem; line-height: 1; }
-    .exp-impact-label { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; margin-bottom: .45rem; }
-    .exp-impact-text { font-size: .9rem; color: var(--text-secondary); line-height: 1.65; }
-    .exp-impact-text strong { color: var(--text-primary); font-weight: 700; }
-
-    /* ── CERT SUMMARY ── */
+    /* CERTS */
     .cert-summary { font-size: .84rem; color: var(--text-secondary); line-height: 1.6; margin: .35rem 0 .5rem; }
     #certifications { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 1.2rem; margin-top: 2.8rem; }
     .cert-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem; transition: all .3s; }
     .cert-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(245,158,11,.12); }
     .cert-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; margin-top:.1rem; }
-    .cert-info {}
     .cert-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; line-height: 1.4; }
     .cert-meta { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact { background: linear-gradient(135deg,var(--accent-dark),var(--accent)); color: white; border-radius: 14px; margin: 5rem 2rem; text-align: center; padding: 5rem 2rem; }
     #contact h2 { color: white; }
     .contact-content { display: flex; flex-direction: column; align-items: center; gap: 1.8rem; }
@@ -174,108 +161,42 @@
 </head>
 <body>
 
-<!-- ══ ANIMATED TECH BACKGROUND ══ -->
 <canvas id="tech-bg"></canvas>
 <script>
 (function(){
   const canvas = document.getElementById('tech-bg');
   const ctx = canvas.getContext('2d');
   let W, H, nodes, frame = 0;
-
-  const ACCENT = '#0ea5e9';
-  const NODE_COUNT = 60;
-  const MAX_DIST = 160;
-
-  function resize(){
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  function randomNode(){
-    return {
-      x: Math.random()*W, y: Math.random()*H,
-      vx: (Math.random()-.5)*.4, vy: (Math.random()-.5)*.4,
-      r: Math.random()*2+1,
-      pulse: Math.random()*Math.PI*2
-    };
-  }
-
-  function init(){
-    resize();
-    nodes = Array.from({length: NODE_COUNT}, randomNode);
-  }
-
+  const NODE_COUNT = 60, MAX_DIST = 160;
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  function randomNode(){ return { x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-.5)*.4, vy: (Math.random()-.5)*.4, r: Math.random()*2+1, pulse: Math.random()*Math.PI*2 }; }
+  function init(){ resize(); nodes = Array.from({length: NODE_COUNT}, randomNode); }
   function draw(){
-    ctx.clearRect(0, 0, W, H);
-    frame++;
-
-    // floating binary rain — subtle
-    ctx.save();
-    ctx.font = '10px IBM Plex Mono, monospace';
-    ctx.fillStyle = 'rgba(14,165,233,0.06)';
-    for(let i=0;i<8;i++){
-      const x = (i * 173 + frame * .3) % W;
-      const y = (i * 97 + frame * .6) % H;
-      ctx.fillText(Math.round(Math.random()),''+x, y);
-    }
+    ctx.clearRect(0,0,W,H); frame++;
+    ctx.save(); ctx.font='10px IBM Plex Mono,monospace'; ctx.fillStyle='rgba(14,165,233,0.06)';
+    for(let i=0;i<8;i++){ const x=(i*173+frame*.3)%W,y=(i*97+frame*.6)%H; ctx.fillText(Math.round(Math.random()),''+x,y); }
     ctx.restore();
-
-    // nodes & edges
     for(let i=0;i<nodes.length;i++){
-      const n = nodes[i];
-      n.x += n.vx; n.y += n.vy;
-      if(n.x<0||n.x>W) n.vx*=-1;
-      if(n.y<0||n.y>H) n.vy*=-1;
-      n.pulse += .025;
-
+      const n=nodes[i]; n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>W)n.vx*=-1; if(n.y<0||n.y>H)n.vy*=-1; n.pulse+=.025;
       for(let j=i+1;j<nodes.length;j++){
-        const m = nodes[j];
-        const dx = n.x-m.x, dy = n.y-m.y;
-        const dist = Math.sqrt(dx*dx+dy*dy);
-        if(dist < MAX_DIST){
-          const alpha = (1 - dist/MAX_DIST) * .18;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(m.x, m.y);
-          ctx.strokeStyle = `rgba(14,165,233,${alpha})`;
-          ctx.lineWidth = .8;
-          ctx.stroke();
-        }
+        const m=nodes[j],dx=n.x-m.x,dy=n.y-m.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<MAX_DIST){ const alpha=(1-dist/MAX_DIST)*.18; ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(m.x,m.y); ctx.strokeStyle=`rgba(14,165,233,${alpha})`; ctx.lineWidth=.8; ctx.stroke(); }
       }
-
-      // pulsing node
-      const pulse = Math.sin(n.pulse)*.5+.5;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r + pulse*.8, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(14,165,233,${0.25 + pulse*.2})`;
-      ctx.fill();
+      const pulse=Math.sin(n.pulse)*.5+.5; ctx.beginPath(); ctx.arc(n.x,n.y,n.r+pulse*.8,0,Math.PI*2); ctx.fillStyle=`rgba(14,165,233,${0.25+pulse*.2})`; ctx.fill();
     }
-
-    // data-flow packets along some edges
-    const t = frame * .008;
+    const t=frame*.008;
     for(let i=0;i<nodes.length;i+=7){
-      const a = nodes[i], b = nodes[(i+3)%nodes.length];
-      const dx = b.x-a.x, dy = b.y-a.y;
-      const dist = Math.sqrt(dx*dx+dy*dy);
-      if(dist < MAX_DIST*1.4){
-        const frac = (t*2) % 1;
-        const px = a.x + dx*frac, py = a.y + dy*frac;
-        ctx.beginPath();
-        ctx.arc(px, py, 2.5, 0, Math.PI*2);
-        ctx.fillStyle = 'rgba(16,185,129,0.55)';
-        ctx.fill();
-      }
+      const a=nodes[i],b=nodes[(i+3)%nodes.length],dx=b.x-a.x,dy=b.y-a.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<MAX_DIST*1.4){ const frac=(t*2)%1,px=a.x+dx*frac,py=a.y+dy*frac; ctx.beginPath(); ctx.arc(px,py,2.5,0,Math.PI*2); ctx.fillStyle='rgba(16,185,129,0.55)'; ctx.fill(); }
     }
-
     requestAnimationFrame(draw);
   }
-
-  window.addEventListener('resize', ()=>{ resize(); });
-  init(); draw();
+  window.addEventListener('resize',()=>{ resize(); }); init(); draw();
 })();
 </script>
 
-<!-- ══ HEADER ══ -->
+<!-- HEADER -->
 <header id="header">
   <nav>
     <div class="logo">Rohit Bharadwaj K.</div>
@@ -298,16 +219,19 @@
 
 <main>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section id="hero">
   <p class="hero-tag">Data Engineer | Analytics | AI | CS Graduate at USC</p>
   <h1>Rohit Bharadwaj Kadiyala</h1>
+  <p class="hero-subtitle">
+    Data engineer with a deep interest in AI and intelligent systems. I build pipelines that move data and models that make sense of it — from enterprise ETL at Deloitte to transformer fine-tuning at USC.
+  </p>
   <ul class="hero-points">
-    <li>Data is at the core of everything I build, backed by a strong CS foundation and professional experience as a Data Engineer at Deloitte</li>
-    <li>Built enterprise-grade ETL pipelines on Azure processing 10GB+ daily data with 99% accuracy for Fortune 500 clients</li>
-    <li>Passionate about the intersection of data engineering, NLP, and computer vision — turning raw data into intelligent systems</li>
-    <li>Pursuing MSCS at USC (GPA 3.83), expanding into ML, NLP, cloud computing, and modern AI architectures</li>
-    <li>Eager to build end-to-end systems that scale — from data ingestion to predictive analytics and deployed ML models</li>
+    <li>Strong foundation in data engineering with 1.5+ years at Deloitte building enterprise ETL pipelines on Azure for Fortune 500 clients</li>
+    <li>Deeply passionate about AI — fine-tuned multimodal transformers (BLIP-2, InstructBLIP) and actively researching LLM hallucination evaluation at USC</li>
+    <li>Pursuing MSCS at USC (GPA 3.83) with coursework in Machine Learning, Cloud Computing, and Information Retrieval</li>
+    <li>Experienced across the full data stack: ingestion, transformation, cloud infrastructure, analytics, and deployed ML models</li>
+    <li>Seeking roles at the intersection of data engineering and AI where clean pipelines power intelligent, production-grade systems</li>
   </ul>
   <div class="cta-buttons">
     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -322,37 +246,55 @@
   </div>
 </section>
 
-<!-- ══ EXPERIENCE ══ -->
+<!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label">Professional Journey</p>
   <h2>Work Experience</h2>
-  <p class="section-description">Enterprise ETL at Deloitte, agricultural ML at Kalgudi, and beyond — every role built something that mattered.</p>
+  <p class="section-description">Enterprise ETL at Deloitte, agricultural ML at Kalgudi, and beyond. Every role built something that mattered.</p>
 
   <!-- Deloitte DE -->
   <div class="experience-item reveal">
     <div class="exp-header">
       <div>
-        <div class="exp-title">Data Engineer · Full-time</div>
+        <div class="exp-title-row">
+          <div class="exp-title">Data Engineer · Full-time</div>
+        </div>
         <div class="exp-company">Deloitte USI — DAS (Deloitte Application Studios)</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
+        <div class="exp-tech">Azure Data Factory · SAP HANA · SQL Server · Python · ETL · Azure DevOps</div>
       </div>
       <div class="exp-date">Jun 2023 – Jun 2024</div>
     </div>
     <div class="exp-impact-grid">
       <div class="exp-impact-card">
         <div class="exp-impact-icon">⚡</div>
-        <div class="exp-impact-label">Pipeline Performance</div>
-        <div class="exp-impact-text">Architected scalable ETL pipelines on <strong>Azure Data Factory</strong> + SAP HANA processing <strong>10 GB+ daily</strong> — cut runtime by <strong>40%</strong> while hitting 99% accuracy across every run.</div>
+        <div class="exp-impact-label">Pipeline Architecture</div>
+        <div class="exp-impact-text">Architected scalable ETL pipelines on <strong>Azure Data Factory</strong> + SAP HANA.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">📦</div>
+        <div class="exp-impact-label">Data Volume</div>
+        <div class="exp-impact-text">Processed <strong>10 GB+ of data daily</strong> with <strong>99% accuracy</strong> across every pipeline run.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">🚀</div>
+        <div class="exp-impact-label">Performance Gains</div>
+        <div class="exp-impact-text">Cut pipeline runtime by <strong>40%</strong> through query optimization and parallel processing strategies.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">💰</div>
         <div class="exp-impact-label">Revenue Impact</div>
-        <div class="exp-impact-text">Powered predictive revenue forecasting models that directly informed <strong>$20M+ optimization</strong> decisions for <strong>5+ Fortune 500 clients</strong> across the Deloitte portfolio.</div>
+        <div class="exp-impact-text">Powered predictive revenue forecasting that informed <strong>$20M+ optimization</strong> decisions for <strong>5+ Fortune 500 clients</strong>.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🤖</div>
-        <div class="exp-impact-label">Automation at Scale</div>
-        <div class="exp-impact-text">Automated data validation and quality checks spanning <strong>15+ source systems</strong>, eliminating <strong>60% of manual effort</strong> and unlocking real-time analytics for enterprise stakeholders.</div>
+        <div class="exp-impact-label">Automation</div>
+        <div class="exp-impact-text">Automated data validation and quality checks across <strong>15+ source systems</strong>, cutting manual effort by <strong>60%</strong>.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">📊</div>
+        <div class="exp-impact-label">Real-Time Analytics</div>
+        <div class="exp-impact-text">Unlocked real-time analytics dashboards for enterprise stakeholders through streamlined, reliable data flows.</div>
       </div>
     </div>
   </div>
@@ -361,22 +303,35 @@
   <div class="experience-item reveal">
     <div class="exp-header">
       <div>
-        <div class="exp-title">DAS Intern · Internship</div>
+        <div class="exp-title-row">
+          <div class="exp-title">DAS Intern · Internship</div>
+        </div>
         <div class="exp-company">Deloitte USI — DAS (Deloitte Application Studios)</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
+        <div class="exp-tech">Angular · .NET · SQL Server · Python</div>
       </div>
       <div class="exp-date">Jan 2023 – Mar 2023</div>
     </div>
     <div class="exp-impact-grid">
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🔍</div>
-        <div class="exp-impact-label">Blazing-Fast Search</div>
-        <div class="exp-impact-text">Built a full-stack data retrieval system with <strong>Angular, .NET & SQL Server</strong> — keyword-filtered company record searches returned results in <strong>under 3 seconds</strong> at enterprise scale.</div>
+        <div class="exp-impact-label">Full-Stack Search</div>
+        <div class="exp-impact-text">Built a data retrieval system using <strong>Angular, .NET, and SQL Server</strong> for keyword-filtered company record search.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">⚡</div>
+        <div class="exp-impact-label">Query Speed</div>
+        <div class="exp-impact-text">Delivered search results in <strong>under 3 seconds</strong> at enterprise scale through optimized SQL queries and indexing.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🔗</div>
         <div class="exp-impact-label">Data Consolidation</div>
-        <div class="exp-impact-text">Unified data from <strong>7+ complex business systems</strong> using Deloitte's four-pillars methodology, creating the reliable multi-source foundation powering enterprise forecasting and estimation analytics.</div>
+        <div class="exp-impact-text">Unified data from <strong>7+ complex business systems</strong> using Deloitte's four-pillars methodology.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">📈</div>
+        <div class="exp-impact-label">Analytics Foundation</div>
+        <div class="exp-impact-text">Built the reliable multi-source data foundation powering enterprise forecasting and estimation analytics.</div>
       </div>
     </div>
   </div>
@@ -385,9 +340,13 @@
   <div class="experience-item reveal">
     <div class="exp-header">
       <div>
-        <div class="exp-title">Software Engineer Intern · Internship</div>
+        <div class="exp-title-row">
+          <!-- Kalgudi logo placeholder - leaf/plant icon representing agri-tech -->
+          <div class="exp-title">Software Engineer Intern · Internship</div>
+        </div>
         <div class="exp-company">Kalgudi Digital Pvt Ltd</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
+        <div class="exp-tech">Python · Neo4j · Tkinter · Predictive Analytics</div>
       </div>
       <div class="exp-date">May 2022 – Jun 2022</div>
     </div>
@@ -395,12 +354,22 @@
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🌐</div>
         <div class="exp-impact-label">Graph Intelligence</div>
-        <div class="exp-impact-text">Prototyped <strong>Knowledge Graphs</strong> using <strong>Neo4j + Python</strong> to map agricultural supply chains and decision flows — exploring graph-native solutions for sector-wide data management challenges.</div>
+        <div class="exp-impact-text">Prototyped <strong>Knowledge Graphs</strong> using <strong>Neo4j + Python</strong> to map agricultural supply chains and decision flows.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">🧠</div>
+        <div class="exp-impact-label">ML Modeling</div>
+        <div class="exp-impact-text">Built a <strong>Yield and Profit Prediction</strong> model leveraging historical crop and pricing data to generate actionable recommendations.</div>
+      </div>
+      <div class="exp-impact-card">
+        <div class="exp-impact-icon">🖥️</div>
+        <div class="exp-impact-label">Tool Delivery</div>
+        <div class="exp-impact-text">Shipped the prediction tool with a <strong>Tkinter interface</strong> for direct use by FPO (Farmer Producer Organisation) operators.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🌾</div>
         <div class="exp-impact-label">Farmer Impact</div>
-        <div class="exp-impact-text">Shipped a <strong>Yield & Profit Prediction Tool</strong> with a Tkinter interface that boosted average crop yields by <strong>35%</strong> for <strong>150+ farmers</strong>, directly optimising FPO operations.</div>
+        <div class="exp-impact-text">Boosted average crop yields by <strong>35%</strong> for <strong>150+ farmers</strong> by surfacing data-driven planting and resource decisions.</div>
       </div>
     </div>
   </div>
@@ -411,7 +380,10 @@
     <div class="experience-item reveal" style="border-bottom:none;padding-bottom:0;">
       <div class="exp-header">
         <div>
-          <div class="exp-title">Student Worker <span class="badge-pt">PART-TIME</span></div>
+          <div class="exp-title-row">
+            <!-- USC logo -->
+            <div class="exp-title">Student Worker <span class="badge-pt">PART-TIME</span></div>
+          </div>
           <div class="exp-company">USCard Services, University of Southern California</div>
           <div class="exp-location">📍 Los Angeles, CA, USA</div>
         </div>
@@ -421,19 +393,29 @@
         <div class="exp-impact-card">
           <div class="exp-impact-icon">🪪</div>
           <div class="exp-impact-label">Credential Operations</div>
-          <div class="exp-impact-text">Manage end-to-end ID credentialing for students, staff, faculty, and VIPs — including processing, record maintenance, access resolution, and multi-carrier shipment coordination (USPS, FedEx, UPS).</div>
+          <div class="exp-impact-text">Manage end-to-end ID credentialing for students, staff, faculty, and VIPs including processing and record maintenance.</div>
+        </div>
+        <div class="exp-impact-card">
+          <div class="exp-impact-icon">📦</div>
+          <div class="exp-impact-label">Logistics Coordination</div>
+          <div class="exp-impact-text">Coordinate multi-carrier shipments via USPS, FedEx, and UPS with access resolution and fulfillment tracking.</div>
         </div>
         <div class="exp-impact-card">
           <div class="exp-impact-icon">📊</div>
-          <div class="exp-impact-label">Operational Efficiency</div>
-          <div class="exp-impact-text">Digitised daily service documentation and overhauled weekly inventory workflows using internal data systems — maintaining <strong>99%+ data accuracy</strong> across all card stock and supply pipelines.</div>
+          <div class="exp-impact-label">Data Accuracy</div>
+          <div class="exp-impact-text">Maintain <strong>99%+ data accuracy</strong> across all card stock and supply pipelines using internal data systems.</div>
+        </div>
+        <div class="exp-impact-card">
+          <div class="exp-impact-icon">⚙️</div>
+          <div class="exp-impact-label">Process Improvement</div>
+          <div class="exp-impact-text">Digitised daily service documentation and overhauled weekly inventory workflows for operational efficiency.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ PROJECTS ══ -->
+<!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">Featured Work</p>
   <h2>Academic Projects</h2>
@@ -443,54 +425,59 @@
       <div class="project-title">PixelSense: Multimodal Image Understanding System</div>
       <div class="project-tech">Python · Deep Learning · Google Colab · Gradio</div>
       <ul class="project-highlights">
-        <li>Initiated and developed an end-to-end multimodal vision-language system, designing real-time inference pipelines for image captioning, VQA, object detection, and OCR using transformer-based models.</li>
-        <li>Fine-tuned BLIP, BLIP-Large, BLIP-2, and InstructBLIP on Flickr8k with FP16 mixed-precision and gradient accumulation, achieving CIDEr 83.94 and CLIP similarity 0.872 while reducing GPU memory usage by ~40%.</li>
-        <li>Performed CLIP-based semantic re-ranking, integrated YOLOv8 for object detection and Tesseract OCR for text extraction.</li>
-        <li>Deployed an interactive Gradio web application facilitating captioning and VQA for real-time grounded image understanding.</li>
+        <li>Built an end-to-end multimodal vision-language system with real-time inference for image captioning, VQA, object detection, and OCR using transformer-based models.</li>
+        <li>Fine-tuned BLIP, BLIP-Large, BLIP-2, and InstructBLIP on Flickr8k with FP16 mixed-precision and gradient accumulation, achieving CIDEr 83.94 and CLIP similarity 0.872.</li>
+        <li>Reduced GPU memory usage by ~40% while maintaining benchmark performance through mixed-precision training optimizations.</li>
+        <li>Integrated CLIP-based semantic re-ranking, YOLOv8 for object detection, and Tesseract OCR for text extraction.</li>
+        <li>Deployed an interactive Gradio web app for real-time captioning and visual question answering.</li>
       </ul>
     </div>
     <div class="project-card reveal">
       <div class="project-title">Twitter Sentiment Analysis with Real-Time Data</div>
-      <div class="project-tech">Python · Tweepy · Streamlit · NLTK · PyCharm · LLM</div>
+      <div class="project-tech">Python · Tweepy · Streamlit · NLTK · LLM</div>
       <ul class="project-highlights">
-        <li>Designed and developed a Tkinter desktop app and Streamlit web platform analyzing 10K+ real-time tweets, delivering interactive sentiment dashboards with word clouds, trend graphs, and keyword-based insights.</li>
-        <li>Researched advanced NLP techniques (transformer-based models, context-aware embeddings) to boost sentiment accuracy by 20%+, identifying methods to detect complex nuances such as sarcasm and multi-dimensional emotional tones.</li>
+        <li>Built a Tkinter desktop app and Streamlit web platform analyzing 10K+ real-time tweets with interactive sentiment dashboards.</li>
+        <li>Delivered word clouds, trend graphs, and keyword-based insights for live data exploration.</li>
+        <li>Researched transformer-based models and context-aware embeddings to boost sentiment accuracy by 20%+.</li>
+        <li>Added sarcasm and multi-dimensional emotional tone detection for nuanced NLP analysis.</li>
       </ul>
     </div>
     <div class="project-card reveal">
       <div class="project-title">WhatsApp Business Communication Automation</div>
       <div class="project-tech">Python · Selenium · PyCharm</div>
       <ul class="project-highlights">
-        <li>Developed an automated WhatsApp-based customer notification system using Python and Selenium, enabling scheduled appointment reminders and service updates with zero manual intervention and multi-line message formatting support.</li>
-        <li>Automated message delivery to multiple recipients in a single execution with dynamic contact handling, reducing manual messaging effort by 60–70% while improving delivery consistency and response quality.</li>
+        <li>Built an automated WhatsApp notification system using Python and Selenium for scheduled appointment reminders and service updates.</li>
+        <li>Achieved zero manual intervention with multi-line message formatting and dynamic contact handling.</li>
+        <li>Reduced manual messaging effort by 60–70% while improving delivery consistency across multiple recipients.</li>
       </ul>
     </div>
     <div class="project-card reveal">
       <div class="project-title">Registration Form with Database Integration</div>
       <div class="project-tech">Python · Tkinter · SQLite · SQLite Browser</div>
       <ul class="project-highlights">
-        <li>Constructed a full-stack registration system using Python Tkinter and SQLite, accomplishing complete CRUD operations and database connectivity from scratch.</li>
-        <li>Designed an efficient data persistence layer with proper schema design and transaction handling, demonstrating solid understanding of database fundamentals and software architecture.</li>
+        <li>Built a full-stack registration system with Python Tkinter and SQLite covering complete CRUD operations from scratch.</li>
+        <li>Designed an efficient data persistence layer with proper schema design and transaction handling.</li>
+        <li>Demonstrated strong database fundamentals through clean architecture and reliable connectivity patterns.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ══ SKILLS ══ -->
+<!-- SKILLS -->
 <section id="skills">
   <p class="section-label">Technical Arsenal</p>
-  <h2>Skills & Technologies</h2>
+  <h2>Skills &amp; Technologies</h2>
   <p class="section-description">Deep expertise across data engineering, machine learning, cloud platforms, and full-stack development.</p>
   <div class="skills-grid">
     <div class="skill-category reveal">
-      <div class="skill-category-title">Languages & Web</div>
+      <div class="skill-category-title">Languages &amp; Web</div>
       <ul class="skill-list">
         <li>Python</li><li>C</li><li>SQL</li><li>JavaScript</li>
-        <li>HTML & CSS</li><li>Angular</li><li>REST APIs</li>
+        <li>HTML &amp; CSS</li><li>Angular</li><li>REST APIs</li>
       </ul>
     </div>
     <div class="skill-category reveal">
-      <div class="skill-category-title">Data Engineering & Cloud</div>
+      <div class="skill-category-title">Data Engineering &amp; Cloud</div>
       <ul class="skill-list">
         <li>Microsoft Azure</li><li>Azure Data Factory (ADF)</li><li>SAP HANA</li>
         <li>ETL Pipelines</li><li>Microsoft SQL Server</li>
@@ -498,17 +485,17 @@
       </ul>
     </div>
     <div class="skill-category reveal">
-      <div class="skill-category-title">ML & AI</div>
+      <div class="skill-category-title">ML &amp; AI</div>
       <ul class="skill-list">
-        <li>Machine Learning & NLP</li><li>Computer Vision</li>
+        <li>Machine Learning &amp; NLP</li><li>Computer Vision</li>
         <li>PyTorch · Scikit-learn</li><li>Pandas · NumPy</li>
         <li>Matplotlib · Seaborn</li><li>NLTK · Streamlit · Gradio</li><li>Selenium</li>
       </ul>
     </div>
     <div class="skill-category reveal">
-      <div class="skill-category-title">Frameworks & Tools</div>
+      <div class="skill-category-title">Frameworks &amp; Tools</div>
       <ul class="skill-list">
-        <li>.NET · Tkinter</li><li>Git & CI/CD</li>
+        <li>.NET · Tkinter</li><li>Git &amp; CI/CD</li>
         <li>Azure DevOps</li><li>Agile / Scrum</li>
         <li>Power BI · Tableau</li><li>Visual Studio Code · PyCharm</li><li>SAP Client</li>
       </ul>
@@ -516,7 +503,7 @@
   </div>
 </section>
 
-<!-- ══ EDUCATION ══ -->
+<!-- EDUCATION -->
 <section id="education">
   <p class="section-label">Academic Background</p>
   <h2>Education</h2>
@@ -524,7 +511,7 @@
     <div class="edu-degree">Master of Science in Computer Science</div>
     <div class="edu-school">University of Southern California (USC)</div>
     <div class="edu-details">📍 Los Angeles, CA, USA &nbsp;|&nbsp; GPA: 3.83/4.0 &nbsp;|&nbsp; Aug 2024 – May 2026</div>
-    <div class="edu-details" style="margin-top:.7rem;"><strong>Relevant Coursework:</strong> Machine Learning & NLP, Information Retrieval, Cloud Computing, Database Systems, Software Engineering, Security Systems</div>
+    <div class="edu-details" style="margin-top:.7rem;"><strong>Relevant Coursework:</strong> Machine Learning &amp; NLP, Information Retrieval, Cloud Computing, Database Systems, Software Engineering, Security Systems</div>
   </div>
   <div class="education-item reveal">
     <div class="edu-degree">Bachelor of Technology in Computer Science and Engineering</div>
@@ -534,13 +521,12 @@
   </div>
 </section>
 
-<!-- ══ CERTIFICATIONS & AWARDS ══ -->
+<!-- CERTIFICATIONS & AWARDS -->
 <section id="certifications">
   <p class="section-label">Recognition</p>
-  <h2>Certifications & Awards</h2>
-  <p class="section-description">Validated across cloud platforms, programming, and academic excellence — a paper trail of curiosity and commitment.</p>
+  <h2>Certifications &amp; Awards</h2>
+  <p class="section-description">Validated across cloud platforms, programming, and academic excellence. A paper trail of curiosity and commitment.</p>
   <div class="cert-grid">
-
     <div class="cert-card reveal">
       <div class="cert-icon">🏆</div>
       <div class="cert-info">
@@ -549,7 +535,6 @@
         <div class="cert-meta">Deloitte USI &nbsp;·&nbsp; Mar 2024</div>
       </div>
     </div>
-
     <div class="cert-card reveal">
       <div class="cert-icon">☁️</div>
       <div class="cert-info">
@@ -558,7 +543,6 @@
         <div class="cert-meta">Microsoft &nbsp;·&nbsp; Nov 2023</div>
       </div>
     </div>
-
     <div class="cert-card reveal">
       <div class="cert-icon">🌟</div>
       <div class="cert-info">
@@ -567,16 +551,14 @@
         <div class="cert-meta">GITAM University &nbsp;·&nbsp; Jun 2023</div>
       </div>
     </div>
-
     <div class="cert-card reveal">
       <div class="cert-icon">🐍</div>
       <div class="cert-info">
         <div class="cert-name">Python Programming Certification</div>
-        <div class="cert-summary">Covered core Python paradigms, data structures, OOP, and scripting for automation — the foundation of every ML and data pipeline project since.</div>
+        <div class="cert-summary">Covered core Python paradigms, data structures, OOP, and scripting for automation. The foundation of every ML and data pipeline project since.</div>
         <div class="cert-meta">Naresh I Technologies &nbsp;·&nbsp; Sep 2020</div>
       </div>
     </div>
-
     <div class="cert-card reveal">
       <div class="cert-icon">☕</div>
       <div class="cert-info">
@@ -585,38 +567,19 @@
         <div class="cert-meta">NPTEL (IIT) &nbsp;·&nbsp; Apr 2020</div>
       </div>
     </div>
-
     <div class="cert-card reveal">
       <div class="cert-icon">🎓</div>
       <div class="cert-info">
         <div class="cert-name">First Class with Distinction — B.Tech CSE</div>
-        <div class="cert-summary">Graduated with a 9.49/10 GPA, placing in the top tier of the Computer Science and Engineering programme — a four-year streak of academic excellence.</div>
+        <div class="cert-summary">Graduated with a 9.49/10 GPA, placing in the top tier of the Computer Science and Engineering programme. A four-year streak of academic excellence.</div>
         <div class="cert-meta">GITAM University &nbsp;·&nbsp; Apr 2023</div>
-      </div>
-    </div>
-
-    <div class="cert-card reveal">
-      <div class="cert-icon">📐</div>
-      <div class="cert-info">
-        <div class="cert-name">USC Graduate Academic Excellence — GPA 3.83/4.0</div>
-        <div class="cert-summary">Consistently strong performance across rigorous graduate coursework in ML, NLP, cloud computing, and information retrieval at the University of Southern California.</div>
-        <div class="cert-meta">University of Southern California &nbsp;·&nbsp; 2024 – Present</div>
-      </div>
-    </div>
-
-    <div class="cert-card reveal">
-      <div class="cert-icon">🤖</div>
-      <div class="cert-info">
-        <div class="cert-name">PixelSense — Multimodal AI Benchmark Achievement</div>
-        <div class="cert-summary">Fine-tuned BLIP, BLIP-2, and InstructBLIP to hit CIDEr 83.94 and CLIP similarity 0.872 on Flickr8k, cutting GPU memory 40% via FP16 mixed-precision training.</div>
-        <div class="cert-meta">USC Academic Project &nbsp;·&nbsp; 2024</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-content">
     <h2>Let's Work Together</h2>
@@ -638,23 +601,19 @@
 </footer>
 
 <script>
-  // header scroll
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
 
-  // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
   }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
 
-  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); });
   });
 
-  // active nav
   const navLinks = document.querySelectorAll('.nav-tabs a');
   const secObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ navLinks.forEach(l => { l.classList.remove('active'); if(l.getAttribute('href')==='#'+e.target.id) l.classList.add('active'); }); } });
