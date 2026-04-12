@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohit Bharadwaj Kadiyala | Data Engineer | AI & Analytics</title>
+  <title>Rohit Bharadwaj Kadiyala | Data Engineer | AI &amp; Analytics</title>
+  <meta name="description" content="Rohit Bharadwaj Kadiyala — Data Engineer and MS Computer Science student at USC. 1.5+ years at Deloitte building enterprise ETL pipelines on Azure. Open to full-time roles in Data Engineering, AI/ML, and Analytics.">
+  <meta property="og:title" content="Rohit Bharadwaj Kadiyala | Data Engineer | AI & Analytics">
+  <meta property="og:description" content="Data Engineer with enterprise ETL experience at Deloitte and MSCS at USC. Building pipelines, models, and everything in between.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0ea5e9">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,8 +38,7 @@
     .hire-badge:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(14,165,233,.4); }
     .hire-dot { width: 7px; height: 7px; background: #7fffb0; border-radius: 50%; animation: pulse-dot 1.8s infinite; }
     @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)} }
-    .nav-resume-btn { display: inline-flex; align-items: center; gap: .35rem; background: transparent; border: 1.5px solid #10b981; color: #059669; padding: .38rem .9rem; border-radius: 999px; font-size: .8rem; font-weight: 700; text-decoration: none; transition: all .2s; white-space: nowrap; }
-    .nav-resume-btn:hover { background: #10b981; color: white; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(16,185,129,.3); }
+
     @media (max-width: 900px) { .nav-tabs { gap: .1rem; padding: .2rem .25rem; } .nav-tabs li a { padding: .3rem .55rem; font-size: .75rem; } .hire-badge { display: none; } .nav-resume-btn { padding: .3rem .65rem; font-size: .75rem; } }
 
     /* HERO */
@@ -53,8 +57,7 @@
     .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 16px rgba(14,165,233,.2); }
     .btn-secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
     .btn-secondary:hover { background: var(--accent); color: white; transform: translateY(-2px); }
-    .btn-resume { background: linear-gradient(135deg,#10b981,#059669); color: white !important; display: inline-flex; align-items: center; gap: .5rem; box-shadow: 0 2px 10px rgba(16,185,129,.3); border: none; }
-    .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(16,185,129,.4); color: white !important; }
+
     .hero-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 2rem; max-width: 560px; }
     .stat-card { padding: 1.4rem 0; border-bottom: 2px solid var(--border); }
     .stat-number { font-size: 1.9rem; font-weight: 700; color: var(--accent); margin-bottom: .25rem; }
@@ -74,8 +77,8 @@
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .7rem; flex-wrap: wrap; gap: .9rem; }
     .exp-title-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .2rem; }
     .exp-title { font-size: 1.2rem; font-weight: 700; }
-    .company-logo { height: 28px; width: auto; object-fit: contain; border-radius: 4px; flex-shrink: 0; }
-    .company-logo-svg { height: 28px; width: auto; flex-shrink: 0; }
+
+    .exp-tech { font-family: 'IBM Plex Mono', monospace; font-size: .78rem; color: var(--text-muted); margin-top: .3rem; letter-spacing: .04em; }
     .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: .86rem; color: var(--text-muted); white-space: nowrap; }
     .exp-company { font-size: .96rem; color: var(--accent); font-weight: 600; margin-bottom: .3rem; }
     .exp-location { font-size: .86rem; color: var(--text-secondary); margin-bottom: .9rem; }
@@ -130,7 +133,7 @@
     .cert-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; line-height: 1.4; }
     .cert-meta { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
 
-    /* CONTACT — fixed layout */
+    /* CONTACT */
     #contact {
       background: linear-gradient(135deg,var(--accent-dark),var(--accent));
       color: white;
@@ -142,8 +145,7 @@
     #contact h2 { color: white; margin-bottom: .5rem; }
     .contact-content { display: flex; flex-direction: column; align-items: center; gap: 2.6rem; max-width: 720px; margin: 0 auto; }
     .contact-desc { font-size: 1.1rem; max-width: 500px; color: rgba(255,255,255,.92); line-height: 1.8; }
-    .contact-email { font-size: 2rem; font-weight: 700; color: white; text-decoration: none; transition: all .3s; letter-spacing: -.5px; word-break: break-all; border-bottom: 2px solid rgba(255,255,255,.4); padding-bottom: .3rem; }
-    .contact-email:hover { opacity: .8; border-color: white; }
+
     .social-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; width: 100%; }
     .social-link {
       background: rgba(255,255,255,.2);
@@ -176,6 +178,7 @@
       .cert-grid { grid-template-columns: 1fr; }
       #contact { margin: 3rem 1.5rem; padding: 4rem 2rem; }
       .social-link { max-width: 100%; }
+      .nav-tabs li a { padding: .3rem .45rem; font-size: .72rem; }
     }
 
     .reveal { opacity: 1; transform: translateY(0); transition: all .6s ease; }
@@ -224,18 +227,16 @@
 <header id="header">
   <nav>
     <div class="logo">Rohit Bharadwaj K.</div>
-    <ul class="nav-tabs">
+    <ul class="nav-tabs" role="list" aria-label="Site navigation">
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#certifications">Awards</a></li>
+      <li><a href="#certifications">Certs & Awards</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <!-- FIX: actual PDF download instead of mailto -->
-
-      <a href="/cdn-cgi/l/email-protection#5b302b39293933223f1b3c363a323775383436" class="hire-badge">
+      <a href="mailto:kpbrbhyd@gmail.com" class="hire-badge" aria-label="Send email — Open to Work">
         <span class="hire-dot"></span>Open to Work
       </a>
     </div>
@@ -249,18 +250,17 @@
   <p class="hero-tag">Data Engineer | Analytics | AI | CS Graduate at USC</p>
   <h1>Rohit Bharadwaj Kadiyala</h1>
   <p class="hero-subtitle">
-    Data engineer with a deep interest in AI and intelligent systems. I build pipelines that move data and models that make sense of it — from enterprise ETL at Deloitte to transformer fine-tuning at USC.
+    Data engineer with a deep interest in AI and intelligent systems. I build pipelines that move data and models that make sense of it, from enterprise ETL at Deloitte to transformer fine-tuning at USC.
   </p>
   <ul class="hero-points">
-    <li>Passionate about <strong>Data Engineering</strong> — designing scalable pipelines, cloud-native ETL, and the infrastructure that makes data reliable at enterprise scale</li>
-    <li>Deeply interested in <strong>Data Science & Analytics</strong> — turning raw data into decisions through predictive modeling, statistical analysis, and business-facing insights</li>
-    <li>Drawn to <strong>AI & Machine Learning</strong> — especially where it connects to data: feature engineering, model-ready pipelines, NLP, and applied ML in production systems</li>
-    <li>Backed by 1.5+ years at Deloitte in enterprise data roles, a B.Tech in CSE from GITAM (GPA 9.49/10, First Class with Distinction), and an MSCS at USC (GPA 3.83) with coursework across ML, Cloud Computing, NLP, and Database Systems</li>
-    <li>Actively looking for full-time roles in Data Engineering, Data Science, Analytics, Business Intelligence, Software Engineering, AI/ML — or anything at the intersection of data and technology</li>
+    <li>Passionate about <strong>Data Engineering</strong>: designing scalable pipelines, cloud-native ETL, and the infrastructure that makes data reliable at enterprise scale</li>
+    <li>Deeply interested in <strong>Data Science & Analytics</strong>: turning raw data into decisions through predictive modeling, statistical analysis, and business-facing insights</li>
+    <li>Drawn to <strong>AI & Machine Learning</strong>: feature engineering, model-ready pipelines, NLP, and applied ML in production systems</li>
+    <li>Backed by <strong>1.5+ years at Deloitte</strong> in enterprise data roles, a Bachelor's in CS from GITAM (GPA 9.49/10, First Class with Distinction), and a Master's in CS at USC (GPA 3.83) with coursework in ML, Cloud Computing, NLP, and Database Systems</li>
+    <li>Actively seeking full-time roles in <strong>Data Engineering, Data Science, Analytics, BI, Software Engineering, or AI/ML</strong></li>
   </ul>
   <div class="cta-buttons">
     <a href="#contact" class="btn btn-primary">Get In Touch</a>
-
     <a href="https://www.linkedin.com/in/rohit-bharadwaj-kadiyala/" target="_blank" class="btn btn-secondary">LinkedIn</a>
     <a href="https://github.com/PrakashRohitK" target="_blank" class="btn btn-secondary">GitHub</a>
   </div>
@@ -275,7 +275,7 @@
 <section id="experience">
   <p class="section-label">Professional Journey</p>
   <h2>Work Experience</h2>
-  <p class="section-description">Enterprise ETL at Deloitte, agricultural ML at Kalgudi, and beyond. Every role built something that mattered.</p>
+  <p class="section-description">Enterprise ETL at Deloitte, agricultural ML at Kalgudi, and hands-on data operations at USC.</p>
 
   <!-- Deloitte DE -->
   <div class="experience-item reveal">
@@ -284,7 +284,7 @@
         <div class="exp-title-row">
           <div class="exp-title">Data Engineer · Full-time</div>
         </div>
-        <div class="exp-company">Deloitte USI — DAS (Deloitte Application Studios)</div>
+        <div class="exp-company">Deloitte USI, DAS (Deloitte Application Studios)</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
         <div class="exp-tech">Azure Data Factory · SAP HANA · SQL Server · Python · ETL · Azure DevOps</div>
       </div>
@@ -293,18 +293,13 @@
     <div class="exp-impact-grid">
       <div class="exp-impact-card">
         <div class="exp-impact-icon">⚡</div>
-        <div class="exp-impact-label">Pipeline Architecture</div>
-        <div class="exp-impact-text">Architected scalable ETL pipelines on <strong>Azure Data Factory</strong> + SAP HANA.</div>
+        <div class="exp-impact-label">Pipeline Architecture & Scale</div>
+        <div class="exp-impact-text">Architected scalable ETL pipelines on <strong>Azure Data Factory</strong>, <strong>SQL Server</strong>, and SAP HANA, processing <strong>10 GB+ of data daily</strong> with <strong>99% accuracy</strong> across every pipeline run.</div>
       </div>
       <div class="exp-impact-card">
-        <div class="exp-impact-icon">📦</div>
-        <div class="exp-impact-label">Data Volume</div>
-        <div class="exp-impact-text">Processed <strong>10 GB+ of data daily</strong> with <strong>99% accuracy</strong> across every pipeline run.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">🚀</div>
-        <div class="exp-impact-label">Performance Gains</div>
-        <div class="exp-impact-text">Cut pipeline runtime by <strong>40%</strong> through query optimization and parallel processing strategies.</div>
+        <div class="exp-impact-icon">🏗️</div>
+        <div class="exp-impact-label">Performance & Environment Design</div>
+        <div class="exp-impact-text">Cut pipeline runtime by <strong>40%</strong> through query optimization and parallel processing; designed multi-environment data layers across <strong>Dev, QA, Stage, and Prod</strong> within the Azure, SAP, and SQL ecosystem.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">💰</div>
@@ -313,13 +308,8 @@
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🤖</div>
-        <div class="exp-impact-label">Automation</div>
-        <div class="exp-impact-text">Automated data validation and quality checks across <strong>15+ source systems</strong>, cutting manual effort by <strong>60%</strong>.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">📊</div>
-        <div class="exp-impact-label">Real-Time Analytics</div>
-        <div class="exp-impact-text">Unlocked real-time analytics dashboards for enterprise stakeholders through streamlined, reliable data flows.</div>
+        <div class="exp-impact-label">Automation & Real-Time Analytics</div>
+        <div class="exp-impact-text">Automated data validation and quality checks across <strong>15+ source systems</strong>, cutting manual effort by <strong>60%</strong> and enabling real-time analytics dashboards for enterprise stakeholders. Delivered all work within <strong>Agile/Scrum</strong> sprint cycles.</div>
       </div>
     </div>
   </div>
@@ -329,9 +319,9 @@
     <div class="exp-header">
       <div>
         <div class="exp-title-row">
-          <div class="exp-title">DAS Intern · Internship</div>
+          <div class="exp-title">DAS Intern</div>
         </div>
-        <div class="exp-company">Deloitte USI — DAS (Deloitte Application Studios)</div>
+        <div class="exp-company">Deloitte USI, DAS (Deloitte Application Studios)</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
         <div class="exp-tech">Angular · .NET · SQL Server · Python</div>
       </div>
@@ -340,23 +330,13 @@
     <div class="exp-impact-grid">
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🔍</div>
-        <div class="exp-impact-label">Full-Stack Search</div>
-        <div class="exp-impact-text">Built a data retrieval system using <strong>Angular, .NET, and SQL Server</strong> for keyword-filtered company record search.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">⚡</div>
-        <div class="exp-impact-label">Query Speed</div>
-        <div class="exp-impact-text">Delivered search results in <strong>under 3 seconds</strong> at enterprise scale through optimized SQL queries and indexing.</div>
+        <div class="exp-impact-label">Full-Stack Search System</div>
+        <div class="exp-impact-text">Built a data retrieval system using <strong>Angular, .NET, and SQL Server</strong> with keyword-based filtering, delivering results in <strong>under 3 seconds</strong> at enterprise scale through optimized queries and indexing.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🔗</div>
-        <div class="exp-impact-label">Data Consolidation</div>
-        <div class="exp-impact-text">Unified data from <strong>7+ complex business systems</strong> using Deloitte's four-pillars methodology.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">📈</div>
-        <div class="exp-impact-label">Analytics Foundation</div>
-        <div class="exp-impact-text">Built the reliable multi-source data foundation powering enterprise forecasting and estimation analytics.</div>
+        <div class="exp-impact-label">Data Consolidation & Analytics</div>
+        <div class="exp-impact-text">Unified data from <strong>7+ complex business systems</strong> using Deloitte's four-pillars methodology, building the reliable multi-source foundation powering enterprise forecasting and estimation analytics.</div>
       </div>
     </div>
   </div>
@@ -366,7 +346,7 @@
     <div class="exp-header">
       <div>
         <div class="exp-title-row">
-          <div class="exp-title">Software Engineer Intern · Internship</div>
+          <div class="exp-title">Software Engineer Intern</div>
         </div>
         <div class="exp-company">Kalgudi Digital Pvt Ltd</div>
         <div class="exp-location">📍 Hyderabad, TG, India</div>
@@ -377,18 +357,8 @@
     <div class="exp-impact-grid">
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🌐</div>
-        <div class="exp-impact-label">Graph Intelligence</div>
-        <div class="exp-impact-text">Prototyped <strong>Knowledge Graphs</strong> using <strong>Neo4j + Python</strong> to map agricultural supply chains and decision flows.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">🧠</div>
-        <div class="exp-impact-label">ML Modeling</div>
-        <div class="exp-impact-text">Built a <strong>Yield and Profit Prediction</strong> model leveraging historical crop and pricing data to generate actionable recommendations.</div>
-      </div>
-      <div class="exp-impact-card">
-        <div class="exp-impact-icon">🖥️</div>
-        <div class="exp-impact-label">Tool Delivery</div>
-        <div class="exp-impact-text">Shipped the prediction tool with a <strong>Tkinter interface</strong> for direct use by FPO (Farmer Producer Organisation) operators.</div>
+        <div class="exp-impact-label">Graph Intelligence & ML Modeling</div>
+        <div class="exp-impact-text">Prototyped <strong>Knowledge Graphs</strong> using <strong>Neo4j + Python</strong> to map agricultural supply chains, and built a <strong>Yield and Profit Prediction</strong> model with a Tkinter interface for direct use by FPO operators.</div>
       </div>
       <div class="exp-impact-card">
         <div class="exp-impact-icon">🌾</div>
@@ -415,23 +385,13 @@
       <div class="exp-impact-grid">
         <div class="exp-impact-card">
           <div class="exp-impact-icon">🪪</div>
-          <div class="exp-impact-label">Credential Operations</div>
-          <div class="exp-impact-text">Manage end-to-end ID credentialing for students, staff, faculty, and VIPs including processing and record maintenance.</div>
-        </div>
-        <div class="exp-impact-card">
-          <div class="exp-impact-icon">📦</div>
-          <div class="exp-impact-label">Logistics Coordination</div>
-          <div class="exp-impact-text">Coordinate multi-carrier shipments via USPS, FedEx, and UPS with access resolution and fulfillment tracking.</div>
+          <div class="exp-impact-label">Credential & Logistics Operations</div>
+          <div class="exp-impact-text">Managed end-to-end ID credentialing for students, staff, faculty, and VIPs, coordinating multi-carrier shipments via USPS, FedEx, and UPS with full access resolution and fulfillment tracking.</div>
         </div>
         <div class="exp-impact-card">
           <div class="exp-impact-icon">📊</div>
-          <div class="exp-impact-label">Data Accuracy</div>
-          <div class="exp-impact-text">Maintain <strong>99%+ data accuracy</strong> across all card stock and supply pipelines using internal data systems.</div>
-        </div>
-        <div class="exp-impact-card">
-          <div class="exp-impact-icon">⚙️</div>
-          <div class="exp-impact-label">Process Improvement</div>
-          <div class="exp-impact-text">Digitised daily service documentation and overhauled weekly inventory workflows for operational efficiency.</div>
+          <div class="exp-impact-label">Data Accuracy & Process Improvement</div>
+          <div class="exp-impact-text">Maintained <strong>99%+ data accuracy</strong> across card stock and supply workflows; digitised daily service documentation and overhauled weekly inventory processes for operational efficiency.</div>
         </div>
       </div>
     </div>
@@ -545,7 +505,7 @@
 </section>
 
 <!-- CERTIFICATIONS & AWARDS -->
-<section id="certifications">
+<div id="certifications">
   <p class="section-label">Recognition</p>
   <h2>Certifications &amp; Awards</h2>
   <p class="section-description">Validated across cloud platforms, programming, and academic excellence. A paper trail of curiosity and commitment.</p>
@@ -593,20 +553,20 @@
     <div class="cert-card reveal">
       <div class="cert-icon">🎓</div>
       <div class="cert-info">
-        <div class="cert-name">First Class with Distinction — B.Tech CSE</div>
+        <div class="cert-name">First Class with Distinction, B.Tech CSE</div>
         <div class="cert-summary">Graduated with a 9.49/10 GPA, placing in the top tier of the Computer Science and Engineering programme. A four-year streak of academic excellence.</div>
         <div class="cert-meta">GITAM University &nbsp;·&nbsp; Apr 2023</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-content">
     <h2>Let's Work Together</h2>
     <p class="contact-desc">Open to full-time opportunities across data, engineering, and AI. Always happy to connect.</p>
-    <div style="font-size:1.9rem;font-weight:700;color:white;letter-spacing:-.5px;border-bottom:2px solid rgba(255,255,255,.4);padding-bottom:.3rem;">kpbrbhyd&#64;gmail&#46;com</div>
+    <div style="font-size:1.9rem;font-weight:700;color:white;letter-spacing:-.5px;border-bottom:2px solid rgba(255,255,255,.4);padding-bottom:.3rem;">kpbrbhyd@gmail.com</div>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/rohit-bharadwaj-kadiyala/" target="_blank" class="social-link">LinkedIn</a>
       <a href="https://github.com/PrakashRohitK" target="_blank" class="social-link">GitHub</a>
@@ -618,10 +578,10 @@
 </main>
 
 <footer>
-  <p>&copy; 2025 Rohit Bharadwaj Kadiyala. All rights reserved. &nbsp;·&nbsp; Deployed with GitHub Pages.</p>
+  <p>&copy; 2026 Rohit Bharadwaj Kadiyala. All rights reserved. &nbsp;·&nbsp; Deployed with GitHub Pages.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
 
@@ -637,5 +597,17 @@
   });
 
   const navLinks = document.querySelectorAll('.nav-tabs a');
+  const sections = document.querySelectorAll('section[id], #certifications');
   const secObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-tabs a[href="#${e.target.id}"]`);
+        if(active) active.classList.add('active');
+      }
+    });
+  }, { threshold: .3 });
+  sections.forEach(s => secObs.observe(s));
+</script>
+</body>
+</html>
