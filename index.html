@@ -58,10 +58,19 @@
     .btn-secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
     .btn-secondary:hover { background: var(--accent); color: white; transform: translateY(-2px); }
 
+    /* TYPEWRITER */
+    .typewriter-wrap { font-size: clamp(1rem,2.5vw,1.3rem); color: var(--accent); font-family: 'IBM Plex Mono', monospace; margin-bottom: 1.6rem; min-height: 1.8em; font-weight: 500; }
+    .typewriter-cursor { animation: blink .7s infinite; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+
     .hero-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 2rem; max-width: 560px; }
     .stat-card { padding: 1.4rem 0; border-bottom: 2px solid var(--border); }
     .stat-number { font-size: 1.9rem; font-weight: 700; color: var(--accent); margin-bottom: .25rem; }
     .stat-label { font-family: 'IBM Plex Mono', monospace; font-size: .76rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .1em; }
+
+    /* AVAILABILITY BANNER */
+    .availability-banner { display: inline-flex; align-items: center; gap: .6rem; background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.3); border-radius: 999px; padding: .45rem 1.2rem; font-size: .85rem; color: #065f46; font-weight: 600; margin-bottom: 1.6rem; }
+    .avail-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; animation: pulse-dot 1.8s infinite; flex-shrink: 0; }
 
     /* SECTIONS */
     section { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
@@ -78,7 +87,7 @@
     .exp-title-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .2rem; }
     .exp-title { font-size: 1.2rem; font-weight: 700; }
     .exp-tech { font-family: 'IBM Plex Mono', monospace; font-size: .78rem; color: var(--text-muted); margin-top: .3rem; letter-spacing: .04em; }
-    .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: .86rem; color: var(--text-muted); white-space: nowrap; }
+    .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: .86rem; color: var(--text-muted); white-space: nowrap; background: rgba(14,165,233,.07); padding: .3rem .75rem; border-radius: 999px; border: 1px solid rgba(14,165,233,.15); }
     .exp-company { font-size: .96rem; color: var(--accent); font-weight: 600; margin-bottom: .3rem; }
     .exp-location { font-size: .86rem; color: var(--text-secondary); margin-bottom: .9rem; }
     .part-time-section { margin-top: 2.8rem; padding-top: 1.8rem; border-top: 2px solid var(--border); }
@@ -100,7 +109,9 @@
     .project-card::before { content:''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(14,165,233,.08),transparent); transition: left .5s; }
     .project-card:hover::before { left: 100%; }
     .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 24px rgba(14,165,233,.1); }
-    .project-title { font-size: 1.2rem; font-weight: 700; margin-bottom: .4rem; position: relative; z-index: 1; }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .4rem; }
+    .project-title { font-size: 1.2rem; font-weight: 700; position: relative; z-index: 1; }
+    .project-tag { font-size: .7rem; font-weight: 700; padding: .2rem .55rem; border-radius: 999px; background: rgba(14,165,233,.12); color: var(--accent-dark); border: 1px solid rgba(14,165,233,.2); white-space: nowrap; flex-shrink: 0; position: relative; z-index: 1; }
     .project-tech { font-family: 'IBM Plex Mono', monospace; font-size: .76rem; color: var(--accent); margin-bottom: .9rem; text-transform: uppercase; letter-spacing: .1em; position: relative; z-index: 1; }
     .project-highlights { list-style: none; display: flex; flex-direction: column; gap: .45rem; position: relative; z-index: 1; }
     .project-highlights li { font-size: .9rem; color: var(--text-secondary); padding-left: 1.3rem; position: relative; line-height: 1.65; }
@@ -114,6 +125,11 @@
     .skill-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
     .skill-list li { font-size: .92rem; color: var(--text-secondary); position: relative; padding-left: 1.4rem; }
     .skill-list li::before { content:'•'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+
+    /* SKILL PILLS ROW */
+    .skill-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2.4rem; }
+    .skill-pill { background: rgba(14,165,233,.08); color: var(--accent-dark); border: 1px solid rgba(14,165,233,.2); border-radius: 999px; padding: .3rem .85rem; font-size: .82rem; font-weight: 600; font-family: 'IBM Plex Mono', monospace; transition: all .2s; }
+    .skill-pill:hover { background: var(--accent); color: white; transform: translateY(-2px); }
 
     /* EDUCATION */
     .education-item { background: var(--surface); border-left: 4px solid var(--accent); padding: 1.8rem; margin-bottom: 1.4rem; border-radius: 4px; transition: all .3s; }
@@ -131,6 +147,13 @@
     .cert-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; margin-top:.1rem; }
     .cert-name { font-size: .95rem; font-weight: 700; color: var(--text-primary); margin-bottom: .2rem; line-height: 1.4; }
     .cert-meta { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--text-muted); }
+
+    /* ROLES LOOKING FOR STRIP */
+    .roles-strip { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 1px solid rgba(14,165,233,.2); border-radius: 14px; padding: 1.8rem 2rem; margin-bottom: 3rem; }
+    .roles-strip-title { font-family: 'IBM Plex Mono', monospace; font-size: .72rem; color: var(--accent-dark); text-transform: uppercase; letter-spacing: .15em; font-weight: 700; margin-bottom: .9rem; }
+    .roles-tags { display: flex; flex-wrap: wrap; gap: .55rem; }
+    .role-tag { background: white; color: var(--accent-dark); border: 1.5px solid var(--accent); border-radius: 8px; padding: .4rem .9rem; font-size: .88rem; font-weight: 700; transition: all .2s; }
+    .role-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); }
 
     /* CONTACT */
     #contact {
@@ -183,9 +206,20 @@
     .reveal { opacity: 1; transform: translateY(0); transition: all .6s ease; }
     .reveal.hidden { opacity: 0; transform: translateY(28px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* SCROLL PROGRESS BAR */
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--success)); z-index: 9999; transition: width .1s linear; width: 0%; }
+
+    /* BACK TO TOP */
+    #back-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--accent); color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; transition: all .3s; z-index: 500; box-shadow: 0 4px 14px rgba(14,165,233,.35); }
+    #back-top.visible { opacity: 1; }
+    #back-top:hover { background: var(--accent-dark); transform: translateY(-3px); }
   </style>
 </head>
 <body>
+
+<div id="progress-bar"></div>
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <canvas id="tech-bg"></canvas>
 <script>
@@ -246,17 +280,36 @@
 
 <!-- HERO -->
 <section id="hero">
+  <div class="availability-banner">
+    <span class="avail-dot"></span>
+    Available for full-time roles starting Summer 2026 &nbsp;·&nbsp; USC MSCS graduating May 2026
+  </div>
   <p class="hero-tag">Data Engineer | Analytics | AI | CS Graduate at USC</p>
   <h1>Rohit Bharadwaj Kadiyala</h1>
+  <div class="typewriter-wrap" id="typewriter"><span id="tw-text"></span><span class="typewriter-cursor">|</span></div>
   <p class="hero-subtitle">
     Data engineer with a deep interest in AI and intelligent systems. I build pipelines that move data and models that make sense of it — from enterprise ETL at Deloitte to LLM evaluation and transformer fine-tuning at USC.
   </p>
+
+  <!-- ROLES STRIP -->
+  <div class="roles-strip reveal">
+    <div class="roles-strip-title">🎯 Actively seeking roles in</div>
+    <div class="roles-tags">
+      <span class="role-tag">Data Engineering</span>
+      <span class="role-tag">Data Science</span>
+      <span class="role-tag">Analytics / BI</span>
+      <span class="role-tag">AI / ML Engineering</span>
+      <span class="role-tag">Software Engineering</span>
+      <span class="role-tag">Cloud & Platform</span>
+    </div>
+  </div>
+
   <ul class="hero-points">
     <li>Passionate about <strong>Data Engineering</strong>: designing scalable pipelines, cloud-native ETL on Azure, Databricks, and Airflow, and the infrastructure that makes data reliable at enterprise scale</li>
     <li>Deeply interested in <strong>Data Science & Analytics</strong>: turning raw data into decisions through predictive modeling, statistical analysis, and business-facing insights</li>
     <li>Drawn to <strong>AI & Machine Learning</strong>: LLM evaluation, transformer fine-tuning, NLP, computer vision, and applied ML in production systems using PyTorch and HuggingFace</li>
     <li>Backed by <strong>1.5+ years at Deloitte</strong> in enterprise data roles, a Bachelor's in CS from GITAM (GPA 9.49/10, First Class with Distinction), and a Master's in CS at USC (GPA 3.83) with coursework in ML, Cloud Computing, NLP, and Database Systems</li>
-    <li>Actively seeking full-time roles in <strong>Data Engineering, Data Science, Analytics, BI, Software Engineering, or AI/ML</strong></li>
+    <li>Graduating <strong>May 2026 from USC MSCS</strong> and actively seeking full-time opportunities — US work-authorized</li>
   </ul>
   <div class="cta-buttons">
     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -369,7 +422,7 @@
 
   <!-- USC Part-time -->
   <div class="part-time-section">
-    <div class="part-time-label">📌 Current Part-Time Role (While Studying at USC MSCS)</div>
+    <div class="part-time-label">📌 Part-Time Role (While Studying at USC MSCS)</div>
     <div class="experience-item reveal" style="border-bottom:none;padding-bottom:0;">
       <div class="exp-header">
         <div>
@@ -379,7 +432,7 @@
           <div class="exp-company">USCard Services, University of Southern California</div>
           <div class="exp-location">📍 Los Angeles, CA, USA</div>
         </div>
-        <div class="exp-date">Apr 2025 – Present</div>
+        <div class="exp-date">Apr 2025 – May 2026</div>
       </div>
       <div class="exp-impact-grid">
         <div class="exp-impact-card">
@@ -404,9 +457,11 @@
   <p class="section-description">End-to-end systems spanning LLM evaluation, multimodal AI, NLP, automation, and full-stack development.</p>
   <div class="projects-grid">
 
-    <!-- NEW PROJECT -->
     <div class="project-card reveal">
-      <div class="project-title">Impact of Model Scale on LLM Hallucinations</div>
+      <div class="project-header">
+        <div class="project-title">Impact of Model Scale on LLM Hallucinations</div>
+        <span class="project-tag">AI / NLP</span>
+      </div>
       <div class="project-tech">PyTorch · Pythia · Qwen2.5 · SQuAD 2.0 · FEVER</div>
       <ul class="project-highlights">
         <li>Evaluated the Pythia suite (70M to 2.8B parameters) on factual reliability, identifying the <strong>Abstention Gap</strong> where base models fail to refuse unanswerable queries (NoAns-EM ≈ 0%) despite scaling parameter counts.</li>
@@ -416,7 +471,10 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-title">PixelSense: High-Performance Multimodal Inference Engine</div>
+      <div class="project-header">
+        <div class="project-title">PixelSense: High-Performance Multimodal Inference Engine</div>
+        <span class="project-tag">Computer Vision</span>
+      </div>
       <div class="project-tech">PyTorch · BLIP-2 · YOLOv8 · CLIP · Gradio · Google Colab</div>
       <ul class="project-highlights">
         <li>Orchestrated a vision-language pipeline; fine-tuned BLIP-2 via <strong>FP16 mixed-precision</strong>, reducing GPU memory overhead by <strong>40%</strong> while achieving a <strong>CIDEr score of 83.94</strong> for real-time grounded VQA.</li>
@@ -426,7 +484,10 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-title">Twitter Sentiment & Streaming Analytics Platform</div>
+      <div class="project-header">
+        <div class="project-title">Twitter Sentiment & Streaming Analytics Platform</div>
+        <span class="project-tag">Data Engineering</span>
+      </div>
       <div class="project-tech">Python · Tweepy · Streamlit · Transformers · NLTK</div>
       <ul class="project-highlights">
         <li>Developed a real-time ingestion engine aggregating <strong>10,000 tweets per minute</strong>, utilizing <strong>Transformer embeddings</strong> for sarcasm detection to achieve a <strong>20% accuracy gain</strong> over lexical classifiers.</li>
@@ -436,7 +497,10 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-title">WhatsApp Business Communication Automation</div>
+      <div class="project-header">
+        <div class="project-title">WhatsApp Business Communication Automation</div>
+        <span class="project-tag">Automation</span>
+      </div>
       <div class="project-tech">Python · Selenium · PyCharm</div>
       <ul class="project-highlights">
         <li>Built an automated WhatsApp notification system using Python and Selenium for scheduled appointment reminders and service updates.</li>
@@ -453,7 +517,18 @@
   <p class="section-label">Technical Arsenal</p>
   <h2>Skills &amp; Technologies</h2>
   <p class="section-description">Deep expertise across data engineering, machine learning, cloud platforms, and full-stack development.</p>
-  <div class="skills-grid">
+
+  <!-- Quick-scan pills -->
+  <div class="skill-pills">
+    <span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">Azure</span>
+    <span class="skill-pill">Databricks</span><span class="skill-pill">Azure Data Factory</span><span class="skill-pill">Airflow</span>
+    <span class="skill-pill">PyTorch</span><span class="skill-pill">HuggingFace</span><span class="skill-pill">Spark</span>
+    <span class="skill-pill">Docker</span><span class="skill-pill">Power BI</span><span class="skill-pill">Tableau</span>
+    <span class="skill-pill">Neo4j</span><span class="skill-pill">SAP HANA</span><span class="skill-pill">CI/CD</span>
+    <span class="skill-pill">REST APIs</span><span class="skill-pill">Git</span><span class="skill-pill">Selenium</span>
+  </div>
+
+  <div class="skills-grid" style="margin-top: 2rem;">
     <div class="skill-category reveal">
       <div class="skill-category-title">Languages</div>
       <ul class="skill-list">
@@ -580,7 +655,7 @@
 <section id="contact">
   <div class="contact-content">
     <h2>Let's Work Together</h2>
-    <p class="contact-desc">Open to full-time opportunities across data, engineering, and AI. Always happy to connect.</p>
+    <p class="contact-desc">Open to full-time opportunities across data, engineering, and AI. Graduating May 2026 from USC — let's connect.</p>
     <div style="font-size:1.9rem;font-weight:700;color:white;letter-spacing:-.5px;border-bottom:2px solid rgba(255,255,255,.4);padding-bottom:.3rem;">kpbrbhyd@gmail.com</div>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/rohit-bharadwaj-kadiyala/" target="_blank" class="social-link">LinkedIn</a>
@@ -597,9 +672,22 @@
 </footer>
 
 <script>
+  // Header scroll
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
 
+  // Progress bar
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  });
+
+  // Back to top
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => { backTop.classList.toggle('visible', window.scrollY > 400); });
+
+  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   revealEls.forEach(el => el.classList.add('hidden'));
   const revealObs = new IntersectionObserver((entries) => {
@@ -607,10 +695,12 @@
   }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
 
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); });
   });
 
+  // Nav active
   const navLinks = document.querySelectorAll('.nav-tabs a');
   const sections = document.querySelectorAll('section[id], #certifications');
   const secObs = new IntersectionObserver((entries) => {
@@ -623,6 +713,30 @@
     });
   }, { threshold: .3 });
   sections.forEach(s => secObs.observe(s));
+
+  // Typewriter
+  const phrases = [
+    "Building pipelines that scale.",
+    "Turning raw data into decisions.",
+    "Fine-tuning transformers, one epoch at a time.",
+    "From Azure ETL to LLM evaluation.",
+    "USC MSCS · Graduating May 2026.",
+    "Open to Data Eng · AI/ML · Analytics roles."
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  const twEl = document.getElementById('tw-text');
+  function typeWrite() {
+    const phrase = phrases[pi];
+    if (!deleting) {
+      twEl.textContent = phrase.slice(0, ++ci);
+      if (ci === phrase.length) { deleting = true; setTimeout(typeWrite, 2000); return; }
+    } else {
+      twEl.textContent = phrase.slice(0, --ci);
+      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+    }
+    setTimeout(typeWrite, deleting ? 40 : 65);
+  }
+  typeWrite();
 </script>
 </body>
 </html>
